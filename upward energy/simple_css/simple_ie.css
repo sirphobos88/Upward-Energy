@@ -1,0 +1,17 @@
+/* ================================================================ 
+This copyright notice must be untouched at all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.stunicholls.com/gallery/simple.html
+Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any 
+way to fit your requirements.
+=================================================================== */
+
+/* vertical align for IE using display:inline-block */
+#gallery ul li i {display:block;}
+#gallery ul li i em {width:0; height:100%; display:inline-block; vertical-align:middle;} 
+#gallery ul li.click span i img {display:inline-block; vertical-align:middle;}
+
+/* setup the default image */
+#gallery ul li.default span i img {display:inline-block; vertical-align:middle;}

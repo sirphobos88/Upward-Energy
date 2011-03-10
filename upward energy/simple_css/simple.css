@@ -1,0 +1,69 @@
+body{color:#ddd;background:#000;font-family: Charcoal, Chicago, sans-serif;
+}
+
+#menuHolder {margin:auto;width:100%; height:35px; position:relative; z-index:100;}
+#menuHolder ul {width:100%; height:35px; padding:0; margin:0; list-style:none; text-align:center;}
+#menuHolder ul {background:#000;}
+#menuHolder ul li {display:inline; margin:0 -4px 0 0;}
+#menuHolder ul li a {display:inline-block; padding:2px 15px; color:#888; text-decoration:none;}
+#menuHolder ul li.clicked > a {color:#FFF;}
+#menuHolder ul li ul {position:absolute; left:0; top:0; z-index:-1; background:#transparent;}
+#menuHolder ul li ul li a {padding:0 10px; font-size:11px; color:#ddd;}
+#menuHolder ul li ul li a:hover {color:#fff; text-decoration:none;}
+
+.wrapper {position:absolute;top:50%;height:82%;margin-top:-267px;left:0;right:0;margin-left:auto;margin-right:auto;width:90%;background:#101010;border:1px solid #888;overflow:hidden;
+}
+
+/* The outer container with a relative position */
+#gallery {width:750px; height:355px; position:relative; background:#eee; border:1px solid #aaa;}
+
+/* Float the ul to the right with a width to give 3 thumbnail images per row */
+#gallery ul {list-style:none; padding:0; margin:8px 0 0 0; width:180px; float:right;}
+
+/* Place the list items inline using display:inline for IE and float:left */
+#gallery ul li {display:inline; width:50px; height:50px; float:left; margin:0 0 5px 5px; border:1px solid #fff; cursor:pointer;}
+
+/* Set up the thumbnail images as the background images */
+#gallery ul li.tb1 {background:url(../../bauce/1.jpg) -120px -90px;}
+#gallery ul li.tb2 {background:url(../../bauce/2.jpg) -110px -110px;}
+#gallery ul li.tb3 {background:url(../../bauce/3.jpg) -250px -100px;}
+#gallery ul li.tb4 {background:url(../../bauce/4.jpg) -170px -180px;}
+#gallery ul li.tb5 {background:url(../../bauce/5.jpg) -120px -40px;}
+#gallery ul li.tb6 {background:url(../../bauce/6.jpg) -20px -120px;}
+#gallery ul li.tb7 {background:url(../../bauce/7.jpg) -320px -190px;}
+#gallery ul li.tb8 {background:url(../../bauce/8.jpg) -70px -70px;}
+#gallery ul li.tb9 {background:url(../../bauce/9.jpg) -120px -210px;}
+#gallery ul li.tb10 {background:url(../../bauce/10.jpg) -190px -180px;}
+#gallery ul li.tb11 {background:url(../../bauce/11.jpg) -20px -240px;}
+#gallery ul li.tb12 {background:url(../../bauce/12.jpg) -90px -100px;}
+#gallery ul li.tb13 {background:url(../../bauce/13.jpg) -220px -160px;}
+#gallery ul li.tb14 {background:url(../../bauce/14.jpg) -120px -160px;}
+#gallery ul li.tb15 {background:url(../../bauce/15.jpg) -120px -80px;}
+#gallery ul li.tb16 {background:url(../../bauce/16.jpg) -130px -80px;}
+#gallery ul li.tb17 {background:url(../../bauce/17.jpg) 0 0;}
+#gallery ul li.tb18 {background:url(../../bauce/18.jpg) -130px -30px;}
+
+/* Hide the full size images */
+#gallery ul li span i img {display:none;}
+
+/* set up the .click style which will be added using javascript */
+
+/* Change the li border to white */
+#gallery ul li.click {border-color:#000; cursor:default;}
+
+/* Position the span using an absolute position and specify the width and height */
+#gallery ul li.click span {position:absolute; left:0; top:0; width:570px; height:355px;}
+
+/* Set up the i so that it is the same size as the span BUT this has a static position so that the image can be both vertically and horizontally centered in all browsers except IE using display:table-cell */
+#gallery ul li.click span i {width:570px; height:355px; display:table-cell; vertical-align:middle; text-align:center;} 
+
+/* Make the image actual size using auto width and height */
+#gallery ul li.click span i img {display:block; width:auto; height:auto; border:1px solid #fff; margin:0 auto;}
+
+/* set up the default image */
+#gallery ul li.default {width:0; height:0; border:0;}
+#gallery ul li.default span {position:absolute; left:0; top:0; width:570px; height:355px;}
+#gallery ul li.default span i {width:570px; height:355px; display:table-cell; vertical-align:middle; text-align:center;} 
+/* specify the image width and height for IE6 */
+#gallery ul li.default span i img {display:block; width:320px; height:240px; border:1px solid #fff; margin:0 auto;}
+#gallery ul li.off {display:none;}
