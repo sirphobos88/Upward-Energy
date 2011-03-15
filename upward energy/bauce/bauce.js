@@ -1,64 +1,58 @@
-/* ================================================================ 
-Copyright (c) 2011 Stu Nicholls - iStu.co.uk. All rights reserved.
-This script and the associated html may be modified in any 
-way to fit your requirements.
-=================================================================== */
-
 $(document).ready(function () {
 
-/* set up the image sizing, positions and opacity */
-iStu8Pics = $('div.iStu8 img').length;
-iStu8Opacity = 1;
-iStu8Width = $('div.iStu8').width()-20;
-iStu8Max = iStu8Width;
-iStu8zIndex = iStu8Pics;
-iStu8Top = iStu8Pics*iStu8Pics*1.6;
-iStu8TopGap = iStu8Pics;
 
-/* arrays to hold these sizes, positions and opacity */ 
-var iStu8L = Array(iStu8Pics);
-var iStu8W = Array(iStu8Pics);
-var iStu8O = Array(iStu8Pics);
-var iStu8Z = Array(iStu8Pics);
-var iStu8T = Array(iStu8Pics);
+baucePics = $('div.bauce img').length;
+bauceOpacity = 1;
+bauceWidth = $('div.bauce').width()-20;
+bauceMax = bauceWidth;
+baucezIndex = baucePics;
+bauceTop = baucePics*baucePics*0.5;
+bauceTopGap = baucePics;
 
-iStu8Count = 0;
 
-/* place these css styles into each image */
-$.each($("div.iStu8 img"), function() {
-$(this).width(iStu8Width)
-.css('left',(iStu8Max-iStu8Width)/2)
-.css('opacity',iStu8Opacity)
-.css('zIndex',iStu8zIndex)
-.css('top',iStu8Top);
+var bauceL = Array(baucePics);
+var bauceW = Array(baucePics);
+var bauceO = Array(baucePics);
+var bauceZ = Array(baucePics);
+var bauceT = Array(baucePics);
 
-/* populate the arrays holding the sizes, positions and opacity */
-iStu8L[iStu8Count] = (iStu8Max-iStu8Width)/2;
-iStu8W[iStu8Count] = iStu8Width;
-iStu8O[iStu8Count] = iStu8Opacity;
-iStu8Z[iStu8Count] = iStu8zIndex;
-iStu8T[iStu8Count] = iStu8Top;
+bauceCount = 0;
 
-iStu8Width=iStu8Width*0.8;
-iStu8Opacity=iStu8Opacity*0.7;
-iStu8zIndex--
-iStu8Top = iStu8Top - (iStu8TopGap*3);
-iStu8TopGap--
-iStu8Count++
+
+$.each($("div.bauce img"), function() {
+$(this).width(bauceWidth)
+.css('left',(bauceMax-bauceWidth)/2)
+.css('opacity',bauceOpacity)
+.css('zIndex',baucezIndex)
+.css('top',bauceTop);
+
+
+bauceL[bauceCount] = (bauceMax-bauceWidth)/2;
+bauceW[bauceCount] = bauceWidth;
+bauceO[bauceCount] = bauceOpacity;
+bauceZ[bauceCount] = baucezIndex;
+bauceT[bauceCount] = bauceTop;
+
+bauceWidth=bauceWidth*0.8;
+bauceOpacity=bauceOpacity*0.7;
+baucezIndex--
+bauceTop = bauceTop - (bauceTopGap*3);
+bauceTopGap--
+bauceCount++
 });
 
-/* the bit that does all the work when clicking the images */
-$("div.iStu8").click(function() {
-/* enlarge and fade out the top image then make it invisible and shrink its size so that it doesn't cover any of the page content */
-$("div.iStu8 img").eq(0).animate({opacity:0, left:-iStu8Width*1.125, top:iStu8Pics*iStu8Pics*2, width:iStu8Max*1.25},500, function() {$("div.iStu8 img").eq(iStu8Pics-1).css('width','0').css('left','50%')});
 
-/* rotate the images so that the top image becomes the bottom image */
-$('div.iStu8').find(':first').remove().appendTo('div.iStu8');
+$("div.bauce").click(function() {
 
-/* animate each image so that it takes on the size, position and opacity of the image in its new position using the array values */
-for (var i=0; i<iStu8Pics-1; i++) {
-$("div.iStu8 img").eq(i).css('zIndex',iStu8Z[i]);
-$("div.iStu8 img").eq(i).animate({opacity:iStu8O[i],left:iStu8L[i],top:iStu8T[i],width:iStu8W[i]},500);
+$("div.bauce img").eq(0).animate({opacity:0, left:-bauceWidth*1.125, top:baucePics*baucePics*2, width:bauceMax*1.25},500, function() {$("div.bauce img").eq(baucePics-1).css('width','0').css('left','50%')});
+
+
+$('div.bauce').find(':first').remove().appendTo('div.bauce');
+
+
+for (var i=0; i<baucePics-1; i++) {
+$("div.bauce img").eq(i).css('zIndex',bauceZ[i]);
+$("div.bauce img").eq(i).animate({opacity:bauceO[i],left:bauceL[i],top:bauceT[i],width:bauceW[i]},500);
 }
 
 });
