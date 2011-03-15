@@ -1,7 +1,7 @@
 body{color:#ddd;background:#333;font-family: Charcoal, Chicago, sans-serif;
 }
 
-.bauce {position:absolute;top:100px;width:600px; margin:0 auto; cursor:pointer;}
+.bauce {position:relative; top:100px;width:600px; margin:0 auto; cursor:pointer;}
 .bauce img {position:absolute; width:480px; background:#333; padding:9px; border:1px solid #888;}
 .baucepad {height:475px;}
 
