@@ -33,7 +33,7 @@ bauceO[bauceCount] = bauceOpacity;
 bauceZ[bauceCount] = baucezIndex;
 bauceT[bauceCount] = bauceTop;
 
-bauceWidth=bauceWidth*1.0;
+bauceWidth=bauceWidth*0.8;
 bauceOpacity=bauceOpacity*0.7;
 baucezIndex--
 bauceTop = bauceTop - (bauceTopGap*3);
