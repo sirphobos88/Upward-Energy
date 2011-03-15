@@ -6,7 +6,7 @@ bauceOpacity = 1;
 bauceWidth = $('div.bauce').width()-20;
 bauceMax = bauceWidth;
 baucezIndex = baucePics;
-bauceTop = baucePics*baucePics*1.5;
+bauceTop = baucePics*baucePics*0.1;
 bauceTopGap = baucePics;
 
 
